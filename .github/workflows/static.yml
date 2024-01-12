@@ -34,8 +34,6 @@ jobs:
 
       - name: Convert to PDF
         run: |
-          pwd
-          ls -la lab1
           find . -type f -name '*.md' | while read file; do
             docker run --rm -v $PWD pandoc/core -s "$file" -o "${file%.md}.pdf"
           done
