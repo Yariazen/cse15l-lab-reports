@@ -47,11 +47,6 @@ jobs:
         with:
           path: lab*/*.pdf
           compression-level: 0
-      - name: Clean Repository
-        run: |
-          find . -mindepth 2 -type f -name '*.pdf' | while read file; do
-            rm $file
-          done
 
   # Deployment job
   deploy:
