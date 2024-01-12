@@ -35,7 +35,7 @@ jobs:
       - name: Convert to PDF
         run: |
           find . -type f -name '*.md' -exec basename {} \; | while read file; do
-            docker run --rm -v $PWD pandoc/core -s /data/"$file" -o /data/output/"${file%.md}.pdf"
+            docker run --rm -v $PWD pandoc/core -s "$file" -o "${file%.md}.pdf"
           done
           
       - name: Setup Pages
