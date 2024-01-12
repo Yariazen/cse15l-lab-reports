@@ -45,8 +45,8 @@ jobs:
       - name: Upload PDFs
         uses: actions/upload-artifact@v4
         with:
-          name: Lab
-          path: ./*.pdf
+          name: Lab Reports
+          path: ./lab*.pdf
           compression-level: 0
 
   # Deployment job
