@@ -38,9 +38,15 @@ jobs:
             sudo docker run --rm --volume "`pwd`:/data" pandoc/latex "--from=markdown+rebase_relative_paths" -s $file -o "${file%.md}.pdf"
           done
           
+      - name: Archive Production Artifacts
+        uses: actions/upload-artifact@v3
+        with: 
+          path: |
+            files=$(printf '"%s" ' *.pdf)
+            
       - name: Setup Pages
         uses: actions/configure-pages@v4
-        
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
