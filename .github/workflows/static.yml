@@ -35,7 +35,7 @@ jobs:
       - name: Convert to PDF
         run: |
           find . -type f -name '*.md' | while read file; do
-            echo file
+            echo $file
           done
           
       - name: Setup Pages
