@@ -31,6 +31,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Convert to PDF
+        run: |
+          find . -type f -name '*.md' -exec basename {} \; | while read file; do
+            docker run --rm -v $PWD:/data pandoc/core -s /data/"$file" -o /data/output/"${file%.md}.pdf"
+          done
+          
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
