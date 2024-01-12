@@ -35,11 +35,12 @@ jobs:
       - name: Convert to PDF
         run: |
           find . -mindepth 2 -type f -name '*.md' | while read file; do
-            echo $file
+            sudo docker run --rm --volume "`pwd`:/data" pandoc/latex "--from=markdown+rebase_relative_paths" -s $file -o "${file%.md}.pdf"
           done
           
       - name: Setup Pages
         uses: actions/configure-pages@v4
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
