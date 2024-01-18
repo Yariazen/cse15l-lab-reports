@@ -24,7 +24,26 @@ This one is the easiest, as we simply want to print out all of the items we have
 - add <br>
 This one is probably the most difficult. The first thing that needs to be understood is what is an URI. An URI consists of 3 major parts, the domain, the path, and the query.
 For example in the URI https://yariazen.github.io/add?apple, the domain is yariazen.github.io, the path is /add, and the query is apple. You'll notice that https:// isn't part of any of these 3 parts, that's because that's the protocol, and is irrelevant to our use case of a URI. The main way to distinguish the domain, path, and query is the domain is always the first part of any URI. Anything after a slash is part of the path. The ? indicates the start of the query. With that out of the way, to implement /add, we need to make a resonable way to pass data. I chose to make my querys arguments seperated by the & symbol as that is the standard for multiple argument querys. Once a format is established, you then parse your data from your query, and add that to your list.
+```java
+String[] args = url.getQuery().split("&");
+    HashSet<String> newItems = new HashSet<>();
+    for (String item : args) {
+        newItems.add(item);
+    }
+    items.addAll(newItems);
+    return String.format("Added %s!\n", String.join(", ", newItems));
+```
 - search <br>
 This one is fairly simple. It's a single argument query, so all that's required is to iterate through your list, and check if each item contains the argument that was passed to it. the String class contains a helpful method called ```contains``` that happens to be able to perform the check for you.
+```java
+String arg = url.getQuery();
+    List<String> foundItems = new ArrayList<>();
+    for (String item : items) {
+        if (item.contains(arg)) {
+            foundItems.add(item);
+        }
+    }
+    return String.join("\n", foundItems) + "\n";
+```
 - 404
 The one is the easiest, just return "404 Not Found!"
