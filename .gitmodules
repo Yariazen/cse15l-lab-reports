@@ -1,0 +1,3 @@
+[submodule "lab2/wavelet"]
+	path = lab2/wavelet
+	url = https://github.com/ucsd-cse15l-f23/wavelet
