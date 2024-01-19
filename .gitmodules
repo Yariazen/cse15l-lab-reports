@@ -1,3 +1,4 @@
 [submodule "week2/wavelet"]
 	path = week2/wavelet
 	url = https://github.com/ucsd-cse15l-f23/wavelet
+	ignore = dirty
