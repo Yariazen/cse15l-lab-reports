@@ -2,18 +2,19 @@ import java.io.IOException;
 import java.net.URI;
 
 import java.util.HashSet;
+import java.util.Set;
 import java.util.ArrayList;
 import java.util.List;
 
 class Handler implements URLHandler {
-    HashSet<String> items = new HashSet<>();
+    Set<String> items = new HashSet<>();
 
     public String handleRequest(URI url) {
         if (url.getPath().equals("/")) {
             return String.join("\n", items) + "\n";
         } else if (url.getPath().equals("/add")) {
             String[] args = url.getQuery().split("&");
-            HashSet<String> newItems = new HashSet<>();
+            Set<String> newItems = new HashSet<>();
             for (String item : args) {
                 newItems.add(item);
             }
