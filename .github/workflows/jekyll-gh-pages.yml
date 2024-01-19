@@ -40,7 +40,7 @@ jobs:
       - name: Convert to PDF
         run: |
           find . -type f -name 'lab*.md' | while read file; do
-            sudo docker run --rm --volume "$(pwd):/data" pandoc/latex --from=markdown-raw_tex+rebase_relative_paths -s "$file" -o "$(basename "$file" .md).pdf"
+            sudo docker run --rm --volume "$(pwd):/data" pandoc/latex --wrap=preserve --from=markdown-raw_tex+rebase_relative_paths -s "$file" -o "$(basename "$file" .md).pdf"
           done
       - name: Upload PDFs
         uses: actions/upload-artifact@v4
