@@ -97,9 +97,11 @@ class ChatServer {
 ```
 
 Queries using curl
+
 ![Querys](./images/Screenshot%202024-01-29%209.44.36%20AM.png)
 
-### Query 1
+### Query 
+
 ![Qeury 1](./images/Screenshot%202024-01-29%203.30.16%20PM.png)
 
 #### Which methods in your code are called?
@@ -143,6 +145,7 @@ The exact same behavior as Query 1.
 The absolute path to my private key is then `/home/yariazen/.ssh/id_rsa`
 
 ![Public Key](./images/Screenshot%202024-01-30%205.01.56%20PM.png)
+
 The absolute path to my private key is then `/home/linux/ieng6/oce/4f/ziz084/.ssh/authorized_keys`
 
 ![Login](./images/Screenshot%202024-01-30%205.00.47%20PM.png)
