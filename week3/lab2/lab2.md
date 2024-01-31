@@ -155,7 +155,7 @@ I learned that students are able to have a website hosted on acsweb.ucsd.edu whi
 
 I also learned that `curl` doesn't work with urls that contain spaces anymore, as of Oct 11, 2021. Personal opinion, but if a "bug" exists and isn't fixed for a long period of time, that's not a bug anymore. Its just a feature.
 
-Another cool thing I learned was when an html file references files on a server, java servers see that as a html request. I didn't handle it properly in my code, but I can see how adjusting relative paths to absolute ones are a pain so might as well as use react.
+Another cool thing I learned was when an html file references files on a server, java servers see that as a html request. I didn't handle it properly in my code, but I can see how adjusting relative paths to absolute ones are a pain so might as well as do something like react. That is construct the html serverside entirely.
 
 I also took a detour and learned how to set a cookie in java because I wanted to uniquely identify clients. It ended up easier to just set the cookie client side though, since setting the cookie in java required modifying the given Server.java file.
 
