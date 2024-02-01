@@ -5,3 +5,4 @@
 [submodule "week4/lab3"]
 	path = week4/lab3
 	url = git@github.com:Yariazen/lab3.git
+	ignore = dirty
