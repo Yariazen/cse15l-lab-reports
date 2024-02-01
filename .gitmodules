@@ -2,3 +2,6 @@
 	path = week2/wavelet
 	url = https://github.com/ucsd-cse15l-f23/wavelet
 	ignore = dirty
+[submodule "week4/lab3"]
+	path = week4/lab3
+	url = git@github.com:Yariazen/lab3.git
