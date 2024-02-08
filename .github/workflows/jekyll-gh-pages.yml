@@ -30,7 +30,6 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
           docker pull danteev/texlive:latest
-      
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Build with Jekyll

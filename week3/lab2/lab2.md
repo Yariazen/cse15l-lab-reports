@@ -6,7 +6,7 @@ header-includes:
 # Lab 2
 ## Part 1
 ChatServer.java
-```java
+<code>
 import java.io.IOException;
 import java.net.URI;
 import java.nio.file.Files;
@@ -63,7 +63,7 @@ class Handler implements URLHandler {
     private String responseHandler(String response)
     {
         String[] lines = response.split("\n");
-        for (int i = 0; i < lines.length; i++) {
+        for (int i = 0; i <code lines.length; i++) {
             if (lines[i].contains("<!-- messages -->")) {
                 String messagesHTML = "";
                 for (String message : messages) {
@@ -99,7 +99,7 @@ class ChatServer {
         Server.start(port, new Handler());
     }
 }
-```
+</code>
 
 Queries using curl
 
