@@ -32,8 +32,19 @@ jobs:
         uses: actions/upload-pages-artifact@v3
       - name: Convert to PDF
         run: |
+          find . -type f -name 'lab*.html' | while read file; do
+            sudo docker run --rm --volume "$(pwd):/workdir" danteev/texlive pandoc -s "$file" -o "$(basename "$file" .html).pdf"
+          done
+      - name: Upload PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: Lab Reports
+          path: ./lab*.pdf
+          compression-level: 0
+      - name: View Structure
+        run: |
           sudo apt install -y tree
-          tree _site
+          tree .
       
   deploy:
     environment:
