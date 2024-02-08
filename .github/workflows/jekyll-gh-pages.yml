@@ -22,12 +22,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Pull Docker image
+        id: get_images
         run: |
           docker pull danteev/texlive:latest
-      - name: View Structure
-        run: |
-          sudo apt install -y tree
-          tree /
+          echo "::set-output name=images::$images"
+      - name: Cache Docker image
+        uses: ScribeMD/docker-cache@0.3.7
+        with:
+          key: docker-${{ runner.os }}-${{ steps.get_images.outputs.images }}
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Build with Jekyll
@@ -48,10 +50,6 @@ jobs:
           name: Lab Reports
           path: ./lab*.pdf
           compression-level: 0
-      - name: View Structure
-        run: |
-          sudo apt install -y tree
-          tree .
       
   deploy:
     environment:
