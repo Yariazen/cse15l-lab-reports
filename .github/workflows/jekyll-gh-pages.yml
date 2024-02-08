@@ -28,6 +28,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Cache Docker Image
+        uses: actions/cache@v4
+        with:
+          path: /var/lib/docker/image
+          key: docker-image-${{ runner.os }}-${{ github.sha }}
+          restore-keys: |
+            docker-image-${{ runner.os }}-
+            docker-image-
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Build with Jekyll
@@ -39,9 +47,8 @@ jobs:
         uses: actions/upload-pages-artifact@v3
       - name: Convert to PDF
         run: |
-          sudo apt-get -y install texlive-latex-recommended texlive-pictures texlive-latex-extra
           find . -type f -name 'lab*.md' | while read file; do
-            sudo docker run --rm --volume "$(pwd):/data" pandoc/latex --wrap=auto --from=markdown+rebase_relative_paths -s "$file" -o "$(basename "$file" .md).pdf"
+            sudo docker run --rm --volume "$(pwd):/data" danteev/texlive pandoc --wrap=auto --from=markdown+rebase_relative_paths -s "lab2.md" -o "test2.pdf
           done
       - name: Upload PDFs
         uses: actions/upload-artifact@v4
