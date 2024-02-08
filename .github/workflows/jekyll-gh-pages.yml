@@ -21,8 +21,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
       - name: Convert to PDF
         run: |
           find . -type f -name 'lab*.md' | while read file; do
@@ -41,6 +39,8 @@ jobs:
         with:
           source: ./
           destination: ./_site
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
       
   deploy:
     environment:
