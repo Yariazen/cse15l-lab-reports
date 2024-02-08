@@ -39,6 +39,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
       - name: Convert to PDF
         run: |
+          sudo apt-get -y install texlive-latex-recommended texlive-pictures texlive-latex-extra
           find . -type f -name 'lab*.md' | while read file; do
             sudo docker run --rm --volume "$(pwd):/data" pandoc/latex --wrap=auto --from=markdown+rebase_relative_paths -s "$file" -o "$(basename "$file" .md).pdf"
           done
