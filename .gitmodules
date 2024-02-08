@@ -6,3 +6,7 @@
 	path = week4/lab3
 	url = git@github.com:Yariazen/lab3.git
 	ignore = dirty
+[submodule "week5/path-examples"]
+	path = week5/path-examples
+	url = https://github.com/ucsd-cse15l-f22/path-examples
+	ignore = dirty

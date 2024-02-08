@@ -115,6 +115,7 @@ Queries using curl
 * `String.join(CharSequence delimiter, CharSequence... elements)`
 * `Files.readAllBytes(Path path)`
 * `responseHandler(String response)`
+* `handleRequest(URI url)`
 
 #### What are the relevant arguments to those methods, and the values of any relevant fields of the class?
 * `url.getPath()`: Takes no arguments.
@@ -127,17 +128,18 @@ Queries using curl
 * `String.join(CharSequence delimiter, CharSequence... elements)`: Arguments are `""` (empty string) and the modified lines. It joins the modified lines back into a single string with no delimiter.
 * `Files.readAllBytes(Path path)`: Takes a Path argument representing the file path.
 * `responseHandler(String response)`: Takes a String argument representing the HTTP response.
+* `handleRequest(URI url)`: Takes a URI object argument representing the requested url.
 
 #### How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.
 In the `handleRequest` method
 
-*`messages`is the only relevant field. It is modified when the URL path is "/add-message". A new message, constructed from the "user" and "s" query parameters, is added to the messages list.
+*`messages`is the only relevant field. It is modified when the URL path is "/add-message". A new message, constructed from the "user" and "s" query parameters, is added to the messages list. Messages becomes `["System:Welcome to the chat room!", "jpolitz:Hello"]`
 
 ### Query 2
 
 ![Query 2](./images/Screenshot%202024-01-29%203.30.34%20PM.png)
 
-The exact same behavior as Query 1.
+The exact same behavior as Query 1. The new URL is parsed for the values of the "user" and "s" query parameters and is added to the messages list. Messages becomes `["System:Welcome to the chat room!", "jpolitz:Hello", "yash:How are you"]`
 
 ## Part 2
 ![Private Key](./images/Screenshot%202024-01-30%204.57.10%20PM.png)
