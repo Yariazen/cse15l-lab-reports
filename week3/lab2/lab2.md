@@ -170,5 +170,6 @@ In regards to the actual content of the lab, nothing is new to me.
 <style>
     code {
         white-space : pre-wrap !important
+        word-break: break-word;
     }
 </style>
