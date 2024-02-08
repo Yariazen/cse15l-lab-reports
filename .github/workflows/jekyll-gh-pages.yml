@@ -38,6 +38,12 @@ jobs:
           find . -type f -name 'lab*.html' | while read file; do
             wkhtmltopdf --enable-local-file-access $file "$(basename "$file" .md).pdf"
           done
+      - name: Upload PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: Lab Reports
+          path: ./lab*.pdf
+          compression-level: fastest
       
   deploy:
     environment:
