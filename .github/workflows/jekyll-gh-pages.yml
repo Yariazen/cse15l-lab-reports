@@ -21,15 +21,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Pull Docker image
-        id: get_images
-        run: |
-          docker pull danteev/texlive:latest
-          echo "::set-output name=images::$images"
       - name: Cache Docker image
+        id: cache
         uses: ScribeMD/docker-cache@0.3.7
         with:
-          key: docker-${{ runner.os }}-${{ steps.get_images.outputs.images }}
+          key: docker-${{ runner.os }}-sha256:fe4da1c9e4a415874c764b065f64e14948b2bea620523d712e5482a1402e9997
+      - name: Pull Docker image
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          docker pull danteev/texlive:latest
+      
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Build with Jekyll
