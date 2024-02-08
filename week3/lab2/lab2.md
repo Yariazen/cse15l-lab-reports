@@ -1,3 +1,8 @@
+---
+header-includes:
+ - \usepackage{fvextra}
+ - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+---
 # Lab 2
 ## Part 1
 ChatServer.java
