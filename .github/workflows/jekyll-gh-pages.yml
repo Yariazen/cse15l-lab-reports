@@ -62,10 +62,7 @@ jobs:
           tar -xf _site/artifact.tar -C _site/  
           tree .
           find . -type f -name 'lab*.html' | while read file; do
-            base_url="https://yariazen.github.io/cse15l-lab-reports"
-            filename=$(basename "$file" .html)
-            weeknum=$(basename $(dirname "$(dirname "$file")"))
-            url="${base_url}/${weeknum}/${filename}.html"
+            url="https://yariazen.github.io/cse15l-lab-reports/${$file#./_site/}}"
             echo $url
             google-chrome --headless --print-to-pdf="$(basename "$file" .html).pdf" "$url"
           done
