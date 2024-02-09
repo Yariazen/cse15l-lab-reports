@@ -59,6 +59,7 @@ jobs:
           sudo apt install tree -y
       - name: Generate PDF
         run: |
+          tar -xf _site/artifact.tar -C _site/  
           tree .
           find . -type f -name 'lab*.html' | while read file; do
             base_url="https://yariazen.github.io/cse15l-lab-reports"
