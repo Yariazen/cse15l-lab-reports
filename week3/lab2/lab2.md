@@ -169,7 +169,7 @@ I also took a detour and learned how to set a cookie in java because I wanted to
 In regards to the actual content of the lab, nothing is new to me.
 <style>
     code {
-        white-space : pre-wrap !important
+        white-space : pre-wrap !important;
         word-break: break-word;
     }
 </style>

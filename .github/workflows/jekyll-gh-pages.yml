@@ -30,13 +30,15 @@ jobs:
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
-      - name: Install wkhtmltopdf
+      - name: Install Chrome
         run: |
-          sudo apt-get install xvfb libfontconfig wkhtmltopdf -y
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo dpkg -i google-chrome-stable_current_amd64.deb
+          sudo apt --fix-broken install -y
       - name: Generate PDF
         run: |
           find . -type f -name 'lab*.html' | while read file; do
-            wkhtmltopdf --enable-local-file-access $file "$(basename "$file" .md).pdf"
+            echo $file
           done
       - name: Upload PDF
         uses: actions/upload-artifact@v4
