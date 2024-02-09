@@ -1,8 +1,3 @@
----
-header-includes:
- - \usepackage{fvextra}
- - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,commandchars=\\\{\}}
----
 # Lab 2
 ## Part 1
 ChatServer.java
@@ -167,9 +162,3 @@ Another cool thing I learned was when an html file references files on a server,
 I also took a detour and learned how to set a cookie in java because I wanted to uniquely identify clients. It ended up easier to just set the cookie client side though, since setting the cookie in java required modifying the given Server.java file.
 
 In regards to the actual content of the lab, nothing is new to me.
-<style>
-    code {
-        white-space : pre-wrap !important;
-        word-break: break-word;
-    }
-</style>
