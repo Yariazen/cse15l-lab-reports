@@ -58,6 +58,7 @@ jobs:
             filename=$(basename "$file" .html)
             weeknum=$(basename $(dirname "$(dirname "$file")"))
             url="${base_url}/${weeknum}/${filename}.html"
+            echo $url
             google-chrome --headless --print-to-pdf="$(basename "$file" .html).pdf" "$url"
           done
       - name: Upload PDF
