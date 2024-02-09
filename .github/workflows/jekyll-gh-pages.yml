@@ -24,7 +24,7 @@ jobs:
       - name: Inject Style
         run: |
           find . -type f -name 'lab*.md' | while read file; do
-            echo "<style>code{white-space:pre-wrap!important;word-break:break-word}</style>" | cat - "$file" > temp
+            echo '<style>code{white-space:pre-wrap!important;word-break:break-word}</style>' | cat - "$file" > temp
             mv temp "$file"
           done
       - name: Setup Pages
