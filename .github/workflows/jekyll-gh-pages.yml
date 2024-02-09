@@ -42,14 +42,14 @@ jobs:
             filename=$(basename "$file" .html)
             weeknum=$(basename $(dirname "$(dirname "$file")"))
             url="${base_url}/${weeknum}/${filename}.html"
-            google-chrome --headless --print-to-pdf="$(basename "$file" .md).pdf" "$url"
+            google-chrome --headless --print-to-pdf="$(basename "$file" .html).pdf" "$url"
           done
       - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
           name: Lab Reports
           path: ./lab*.pdf
-          compression-level: fastest
+          compression-level: 0
       
   deploy:
     environment:
