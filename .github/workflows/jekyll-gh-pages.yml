@@ -56,8 +56,10 @@ jobs:
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo dpkg -i google-chrome-stable_current_amd64.deb
           sudo apt --fix-broken install -y
+          sudo apt install tree -y
       - name: Generate PDF
         run: |
+          tree .
           find . -type f -name 'lab*.html' | while read file; do
             base_url="https://yariazen.github.io/cse15l-lab-reports"
             filename=$(basename "$file" .html)
