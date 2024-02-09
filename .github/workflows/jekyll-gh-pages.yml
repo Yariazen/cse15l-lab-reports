@@ -68,8 +68,7 @@ jobs:
         run: |
           tar -xf _site/artifact.tar -C _site/  
           find . -type f -name 'lab*.html' | while read file; do
-            url="https://yariazen.github.io/cse15l-lab-reports/${file#./_site/}"
-            google-chrome --headless --print-to-pdf="$(basename "$file" .html).pdf" "$url"
+            google-chrome --headless --print-to-pdf="$(basename "$file" .html).pdf" "https://yariazen.github.io/cse15l-lab-reports/${file#./_site/}"
           done
       - name: Upload PDF
         uses: actions/upload-artifact@v4
