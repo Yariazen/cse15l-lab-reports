@@ -51,16 +51,18 @@ jobs:
         with:
           name: github-pages
           path: ./_site
-      - name: Cache Chrome deb
+      - name: Cache Chrome
         id: cache-chrome
         uses: actions/cache@v4
         with:
           path: google-chrome-stable_current_amd64.deb
           key: ${{ runner.os }}-chrome-${{ hashFiles('google-chrome-stable_current_amd64.deb') }}
-      - name: Install Chrome
+      - name: Download Chrome
         if: steps.cache-chrome.outputs.cache-hit != 'true'
         run: |
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+      - name: Install Chrome
+        run: |
           sudo dpkg -i google-chrome-stable_current_amd64.deb
       - name: Generate PDF
         run: |
