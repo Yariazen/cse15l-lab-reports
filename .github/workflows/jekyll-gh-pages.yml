@@ -51,7 +51,14 @@ jobs:
         with:
           name: github-pages
           path: ./_site
+      - name: Cache Chrome deb
+        id: cache-chrome
+        uses: actions/cache@v4
+        with:
+          path: google-chrome-stable_current_amd64.deb
+          key: ${{ runner.os }}-chrome-${{ hashFiles('google-chrome-stable_current_amd64.deb') }}
       - name: Install Chrome
+        if: steps.cache-chrome.outputs.cache-hit != 'true'
         run: |
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo dpkg -i google-chrome-stable_current_amd64.deb
@@ -59,8 +66,7 @@ jobs:
         run: |
           tar -xf _site/artifact.tar -C _site/  
           find . -type f -name 'lab*.html' | while read file; do
-            url="https://yariazen.github.io/cse15l-lab-reports/${file#./_site/}}"
-            echo $url
+            url="https://yariazen.github.io/cse15l-lab-reports/${file#./_site/}"
             google-chrome --headless --print-to-pdf="$(basename "$file" .html).pdf" "$url"
           done
       - name: Upload PDF
