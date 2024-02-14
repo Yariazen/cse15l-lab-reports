@@ -27,7 +27,7 @@ jobs:
             echo '<style>code{white-space:pre-wrap!important;word-break:break-word}</style>' | cat - "$file" > temp
             mv temp "$file"
             filename=$(basename "$file")
-            echo '- [$filename] ($file)' >> index.md
+            echo "- [$filename] ($file)" >> index.md
           done
       - name: Setup Pages
         uses: actions/configure-pages@v4
