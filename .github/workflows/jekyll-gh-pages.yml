@@ -21,11 +21,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Inject Style
+      - name: Preprocess Markdown
         run: |
           find . -type f -name 'lab*.md' | while read file; do
             echo '<style>code{white-space:pre-wrap!important;word-break:break-word}</style>' | cat - "$file" > temp
             mv temp "$file"
+            filename=$(basename "$file")
+            echo '- [$filename] ($file)' >> index.md
           done
       - name: Setup Pages
         uses: actions/configure-pages@v4
