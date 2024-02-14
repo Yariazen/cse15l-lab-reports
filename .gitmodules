@@ -10,3 +10,7 @@
 	path = week5/path-examples
 	url = https://github.com/ucsd-cse15l-f22/path-examples
 	ignore = dirty
+[submodule "week5/docsearch"]
+	path = week5/docsearch
+	url = https://github.com/Yariazen/docsearch
+	ignore = dirty
