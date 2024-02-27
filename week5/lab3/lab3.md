@@ -175,4 +175,6 @@ This command is utterly useless. Since the `-a` flag is implicitely used, this e
 
 # Reference
 
+I used this as my reference for all the info provided on find.
+
 find(1). (2022). In Linux Manual Pages (5.13.0). Retrieved from https://man7.org/linux/man-pages/man1/find.1.html
