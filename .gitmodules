@@ -18,3 +18,7 @@
 	path = week8/chat-server-pro
 	url = git@github.com:Yariazen/chat-server-pro.git
 	ignore = dirty
+[submodule "week7/lab4/lab7"]
+	path = week7/lab4/lab7
+	url = git@github.com:Yariazen/lab7.git
+	ignore = dirty
