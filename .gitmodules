@@ -14,3 +14,7 @@
 	path = week5/docsearch
 	url = https://github.com/Yariazen/docsearch
 	ignore = dirty
+[submodule "week8/chat-server-pro"]
+	path = week8/chat-server-pro
+	url = git@github.com:Yariazen/chat-server-pro.git
+	ignore = dirty
