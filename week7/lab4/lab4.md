@@ -30,7 +30,7 @@ Running the tests
 
 Key pressed: ```bash test.sh```
 
-You can use tab autocomplete, but the specific performance depends on your system. For example, I could have a command called ```base64``` or ```base32``` which I do, which would make it not possible to autocomplete ```bash```. For ```test.sh``` I can, but its 7 characters. I type at on average 144 words per minute. The time it save me to hit the tab key is negligable. I believe Donald Knuth's famouse quote, "Premature optimization is the root of all evil" is particularly applicable here. Optimizing between typing 7 characters versus typing 2 characters is the very definition of premature optimization.
+You can use tab autocomplete, but the specific performance depends on your system. For example, I could have a command called ```base64``` or ```base32``` which I do, which would make it not possible to autocomplete ```bash```. For ```test.sh``` I can, but its 7 characters. However, it's more inconvenient for me to type ```<tab>``` than it is for me to just type the additional 5 characters since typing tab requires me to adjust my right hand.
 
 Finally, this is just the command to explicitely invoke the Bash shell to interpret and run the script ```test.sh``` . 
 
@@ -40,7 +40,7 @@ Finally, this is just the command to explicitely invoke the Bash shell to interp
 Key pressed:
 - ```vim ListExamples.java```: This command opens ```ListExamples.java``` in the vim editor.
 
-- ```44G```: This command goes to line 44. Realisically however, there's no real way to know where the bug is exactly, and there's no point in doing this with only keypresses. How many of us are planning on becoming mainframe developers? Probably nobody, and that's the most probable reason for someone to not be able to scroll through a document with a mouse.
+- ```44G```: This command goes to line 44. Realisically however, there's no real way to know where the bug is exactly, and there's no point in doing this with only keypresses. How many of us are planning on becoming mainframe developers? Probably none of us, and that's the most probable reason for someone to not be able to scroll through a document with a mouse.
 
 - ```e```: This command moves the cursor to the end of the current word.
 
@@ -65,5 +65,5 @@ Then entering ```<up>``` twice would put me at ```bash test.sh```. Then pressein
 ![image](images/9.png)
 
 Key pressed: 
-- ```git add ListExamples.java```: This adds ```ListExamples.java``` to the working tree. If we really want to optimize key presses ```git add L<tab>j<tab>``` would reduce this to 4 presses instead of 17, but as stated above, it really doesn't matter.
+- ```git add ListExamples.java```: This adds ```ListExamples.java``` to the working tree. If we really want to optimize key presses ```git add L<tab>j<tab>``` would reduce this to 4 presses instead of 17, but I find this to be perfectly doable without tab autocomplete. I only really use tab autocomplete when dealing with files and directories with more complicated structures.
 - ```git commit -m "lab4"```: This creates a new commit containing the current working tree and the given message. Once again, if we really want to optimize key presses ```git com<tab> -m "lab4"``` would suffice.

@@ -52,7 +52,7 @@ From the terminal output and information provided, it's clear that the issue lie
         - ```Display.java``` 
 - ```Database.java```
 ```java
- import java.sql.*;
+import java.sql.*;
 
 public class Database {
     public static String[] fetchUsernames() {
@@ -113,6 +113,6 @@ public class Database {
 
 ## Part 2
 
-To sum up everything I've learned from this course, I've learned that the find command has boolean operator flags. I've also learned that since 2021 as of commit ```9a8564a920188e49d5bd8c1c8573ddef97f6e03a```, curl no longer accepts non escaped spaces. Haven't used curl to any real extent since 2018 so it was quite interesting to see this rather unjustifiable change. If the standard hasn't been followed since its introduction, then its not the tooling that needs to be changed but rather the standard that needs changing. I've also learned about headless chrome, due to the rather confusing requirement for our lab reports to be done with github pages. That would be a good thing to clarify in the future. After all, my original workflow was using github pages to convert markdown to html, then pandoc to convert html to pdf. However, that was considered not "github pages". After talking with the TAs, its apparent the requirement is not for our lab reports to be done with github pages, but rather our lab reports should be rendered using chromium.
+To sum up everything I've learned from this course, I've learned that the find command has boolean operator flags. I've also learned that since 2021 as of commit ```9a8564a920188e49d5bd8c1c8573ddef97f6e03a```, curl no longer accepts non escaped spaces. Haven't used curl to any real extent since 2018 so it was quite interesting to see this rather unjustifiable change. If the standard hasn't been followed since its introduction, then its not the tooling that needs to be changed but rather the standard that needs changing. I've also learned about headless chrome, due to the rather confusing requirement for our lab reports to be done with github pages. That would be a good thing to clarify in the future. After all, my original workflow was using github pages to convert markdown to html, then pandoc to convert html to pdf. However, that was considered not "github pages". After talking with the TAs, its apparent the requirement is not for our lab reports to be done with github pages, but rather our lab reports should be rendered using chromium, which has an unhelpful bug regarding text wrap that requires me to inject some css into the html to fix.
 
 In general, I've had a great time in labs and lectures but there's nothing for me to learn from this course. I've been daily driving linux since 2020, specifically debian bullseye in regards to the linux portion of this course. All my notes are done in vim using snippets for latex shortcuts since I started univesity. For the other major portion of the course pertaining to java, while I haven't worked in Java since 2016, I've been coding for almost a decade since, and Java makes sense now that I'm looking at it with fresh eyes.
